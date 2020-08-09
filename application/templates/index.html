@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML WebServer</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Prediction of Flight Delays</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post"> 
+    	<input type="text" name="MONTH" placeholder="Month" required="required" />
+        <input type="text" name="DAY_OF_WEEK" placeholder="Day of the Week" required="required" />
+		<input type="text" name="SCHEDULED_TIME" placeholder="Scheduled Time" required="required" />
+		<input type="text" name="AIRLINE" placeholder="Airline Type" required="required" />
+		<input type="text" name="ORIGIN_AIRPORT" placeholder="Origin Airport" required="required" />
+		<input type="text" name="DESTINATION_AIRPORT" placeholder="Destination Airport" required="required" />
+		<input type="text" name="SCHEDULED_DEPARTURE" placeholder="Scheduled Departure" required="required" />
+		<input type="text" name="AIR_SYSTEM_DELAY" placeholder="Delay in Air System" required="required" />
+		<input type="text" name="SECURITY_DELAY" placeholder="Delay in Security System" required="required" />
+		<input type="text" name="AIRLINE_DELAY" placeholder="Delay in Airline" required="required" />
+		<input type="text" name="LATE_AIRCRAFT_DELAY" placeholder="Late Aircraft Delay" required="required" />
+		<input type="text" name="WEATHER_DELAY" placeholder="Delay in Weather" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
