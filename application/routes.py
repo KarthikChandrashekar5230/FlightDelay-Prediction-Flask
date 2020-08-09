@@ -20,7 +20,7 @@ def predict():
     features = features.reshape(1,-1)
     # Sample Feature Dataset to make the test_df Dataframe in sync with feature_dataset
 
-    features_dataset = pd.read_csv("https://github.com/KarthikChandrashekar5230/Heroku-FlightDelay-Prediction/blob/master/application/Features_Dataset.csv?raw=true", header=0, low_memory=False)
+    features_dataset = pd.read_csv("https://github.com/KarthikChandrashekar5230/FlightDelay-Prediction-Flask/blob/master/application/Features_Dataset.csv?raw=true", header=0, low_memory=False)
     features_dataset.drop(['Unnamed: 0'], axis=1, inplace=True)
 
     # Features required for prediction
