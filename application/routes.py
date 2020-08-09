@@ -33,7 +33,7 @@ def predict():
     test_df = data_preprocess.features_dataype_check(test_df)
     test_df = data_preprocess.data_preprocessing(test_df)
     test_df = data_preprocess.create_dummyvariables(test_df)
-    rf_model = pickle.load(open('application/RFRegressor.pkl', 'rb'))
+    rf_model = pickle.load(open('application/RFRegressor-65MB.pkl', 'rb'))
 
     # Sample Feature Dataset to make the test_df Dataframe in sync with feature_dataset
     test_df = features_dataset.append([test_df])
